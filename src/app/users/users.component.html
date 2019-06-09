@@ -1,4 +1,6 @@
 <div>
-  <app-user-search></app-user-search>
-  <app-users-list></app-users-list>
+  <div>
+    <app-user-search [loadedUsers]="loadedUsers"></app-user-search>
+    <app-users-list [loadedUsers]="loadedUsers"></app-users-list>
+  </div>
 </div>
