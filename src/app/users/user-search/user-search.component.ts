@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Input } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
+
 @Component({
   selector: 'app-user-search',
   templateUrl: './user-search.component.html',
@@ -7,7 +7,16 @@ import { Input } from '@angular/core';
 })
 export class UserSearchComponent implements OnInit {
   @Input() loadedUsers;
+  @Output() searchUsers = new EventEmitter();
   constructor() {}
 
   ngOnInit() {}
+  // onSearchUsers(event: Event) {
+  //   const { value } = <HTMLInputElement>event.target;
+  //   // console.log(value);
+  //   // this.search.emit();
+  // const u = this.loadedUsers.filter(user => {
+  //   return user.firstName === value;
+  // });
+  // }
 }

@@ -2,8 +2,18 @@
   <img class="card-img-top" src="..." alt="Card image cap" />
   <div class="card-body">
     <h5 class="card-title">{{ user.firstName + ' ' + user.lastName }}</h5>
-    <div class="card-text">{{ user.email }}</div>
-    <div class="card-text">{{ user.phone }}</div>
+    <div class="card-text text-muted">{{ user.jobTitle }}</div>
+    <div class="card-text contact-info">{{ user.email }}</div>
+    <div class="card-text contact-info ">
+      {{ user.phone }}
+      <span *ngIf="user.extension"
+        ><span class="text-muted">(</span>{{ user.extension
+        }}<span class="text-muted">)</span></span
+      >
+    </div>
+    <div class="card-text" *ngIf="user.room && user.room.area">
+      {{ user.room.area }}
+    </div>
 
     <a href="#" class="card-link">Card link</a>
   </div>

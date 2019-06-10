@@ -1,6 +1,6 @@
 <div>
   <div>
-    <app-user-search [loadedUsers]="loadedUsers"></app-user-search>
+    <app-user-search (searchUsers)="onSearchUsers($event)"></app-user-search>
     <app-users-list [loadedUsers]="loadedUsers"></app-users-list>
   </div>
 </div>

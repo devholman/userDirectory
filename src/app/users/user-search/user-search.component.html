@@ -2,6 +2,7 @@
   <div class="input-group">
     <input
       type="text"
+      (input)="searchUsers.emit($event)"
       class="form-control"
       aria-label="Text input with dropdown button"
     />

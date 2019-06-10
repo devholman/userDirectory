@@ -8,9 +8,18 @@ import { UsersListComponent } from './users/users-list/users-list.component';
 import { UserSearchComponent } from './users/user-search/user-search.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { UserCardComponent } from './users/users-list/user-card/user-card.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, UsersComponent, UsersListComponent, UserSearchComponent, SidebarComponent, UserCardComponent],
-  imports: [BrowserModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    UsersComponent,
+    UsersListComponent,
+    UserSearchComponent,
+    SidebarComponent,
+    UserCardComponent
+  ],
+  imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })
