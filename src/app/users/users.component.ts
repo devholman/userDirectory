@@ -8,15 +8,17 @@ import { Input } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
   @Input() loadedUsers;
+  @Output() filteredUsers;
   searchText;
   constructor() {}
   onSearchUsers(event: Event) {
     const { value } = <HTMLInputElement>event.target;
-    this.searchText = value;
-    console.log(value);
-    this.loadedUsers = this.loadedUsers.filter(user => {
+
+    this.filteredUsers = this.loadedUsers.filter(user => {
       return user.firstName.toLowerCase().includes(value.toLowerCase());
     });
   }
-  ngOnInit() {}
+  ngOnInit() {
+    this.filteredUsers = this.loadedUsers;
+  }
 }

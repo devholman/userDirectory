@@ -9,14 +9,8 @@ export class UserSearchComponent implements OnInit {
   @Input() loadedUsers;
   @Output() searchUsers = new EventEmitter();
   constructor() {}
-
+  onSearchUser() {
+    this.searchUsers.emit(event);
+  }
   ngOnInit() {}
-  // onSearchUsers(event: Event) {
-  //   const { value } = <HTMLInputElement>event.target;
-  //   // console.log(value);
-  //   // this.search.emit();
-  // const u = this.loadedUsers.filter(user => {
-  //   return user.firstName === value;
-  // });
-  // }
 }
