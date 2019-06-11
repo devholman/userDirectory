@@ -1,5 +1,6 @@
-import { Component, OnInit, Output } from '@angular/core';
-import { Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { UsersService } from '../users.service';
 
 @Component({
   selector: 'app-users',
@@ -7,10 +8,10 @@ import { Input } from '@angular/core';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  @Input() loadedUsers;
-  @Output() filteredUsers;
-  searchText;
-  constructor() {}
+  filteredUsers = [];
+  loadedUsers = [];
+  isFetchingUser = false;
+  constructor(private http: HttpClient, private usersService: UsersService) {}
   onSearchUsers(event: Event) {
     const { value } = <HTMLInputElement>event.target;
 
@@ -19,6 +20,17 @@ export class UsersComponent implements OnInit {
     });
   }
   ngOnInit() {
-    this.filteredUsers = this.loadedUsers;
+    this.isFetchingUser = true;
+
+    this.usersService.fetchUsers().subscribe(
+      users => {
+        this.isFetchingUser = false;
+        this.loadedUsers = users;
+      },
+      err => console.log(err),
+      () => {
+        this.filteredUsers = this.loadedUsers;
+      }
+    );
   }
 }

@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { environment } from '../environments/environment';
+import { User } from './users/users-list/user.model';
 
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 const url = 'https://demo.iofficeconnect.com/external/api/rest/v2/users';
 const httpOptions = {
@@ -18,10 +20,18 @@ export class UsersService {
   constructor(private http: HttpClient) {}
 
   fetchUsers() {
-    return this.http.get<[]>(url, httpOptions).pipe(
+    return this.http.get<User[]>(url, httpOptions).pipe(
       map(resp => {
         return resp;
       })
     );
+  }
+
+  addUser(user: User): Observable<User> {
+    return this.http
+      .post<User>(url, user, httpOptions)
+      .pipe
+      //error handler
+      ();
   }
 }

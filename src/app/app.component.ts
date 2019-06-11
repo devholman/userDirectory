@@ -11,20 +11,5 @@ export class AppComponent implements OnInit {
   loadedUsers = [];
   isFetchingUser = false;
   constructor(private http: HttpClient, private usersService: UsersService) {}
-  ngOnInit() {
-    this.isFetchingUser = true;
-
-    this.usersService.fetchUsers().subscribe(users => {
-      this.isFetchingUser = false;
-      this.loadedUsers = users;
-    });
-  }
-
-  // onSearchUsers(e) {
-  //   const { value } = e.target;
-  //   console.log(value);
-  //   this.loadedUsers.filter(user => {
-  //     user.firstName === value;
-  //   });
-  // }
+  ngOnInit() {}
 }

@@ -3,12 +3,7 @@
   <div class="w-25 h-100 p-0">
     <app-sidebar></app-sidebar>
   </div>
-
   <div class="w-75 mt-4 mx-4">
-    <p *ngIf="loadedUsers.length < 1 && !isFetchingUser">No Users Available!</p>
-    <div *ngIf="loadedUsers.length >= 1 && !isFetchingUser">
-      <app-users [loadedUsers]="loadedUsers"></app-users>
-    </div>
-    <p *ngIf="isFetchingUser">Loading...</p>
+    <router-outlet></router-outlet>
   </div>
 </div>

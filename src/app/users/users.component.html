@@ -1,6 +1,12 @@
 <div>
   <div>
     <app-user-search (searchUsers)="onSearchUsers($event)"></app-user-search>
-    <app-users-list [filteredUsers]="filteredUsers"></app-users-list>
+    <p *ngIf="loadedUsers.length < 1 && !isFetchingUser">
+      No Users Available!
+    </p>
+    <div *ngIf="loadedUsers.length >= 1 && !isFetchingUser">
+      <app-users-list [filteredUsers]="filteredUsers"></app-users-list>
+    </div>
+    <p *ngIf="isFetchingUser">Loading...</p>
   </div>
 </div>

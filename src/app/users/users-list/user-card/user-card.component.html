@@ -1,6 +1,6 @@
 <div class="card text-center h-100" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap" />
-  <div class="card-body">
+  <!-- <img class="card-img-top" src="..." alt="Card image cap" /> -->
+  <div class="card-body grow">
     <h5 class="card-title">{{ user.firstName + ' ' + user.lastName }}</h5>
     <div class="card-text text-muted">{{ user.jobTitle }}</div>
     <div class="card-text contact-info">{{ user.email }}</div>
@@ -11,7 +11,7 @@
         }}<span class="text-muted">)</span></span
       >
     </div>
-    <div class="card-text" *ngIf="user.room && user.room.area">
+    <div class="card-text text-muted" *ngIf="user.room && user.room.area">
       {{ user.room.area }}
     </div>
 

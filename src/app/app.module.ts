@@ -9,6 +9,13 @@ import { UserSearchComponent } from './users/user-search/user-search.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { UserCardComponent } from './users/users-list/user-card/user-card.component';
 import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
+import { AddUserComponent } from './users/add-user/add-user.component';
+
+const appRoutes: Routes = [
+  { path: '', component: UsersComponent },
+  { path: 'addUser', component: AddUserComponent }
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,9 +24,15 @@ import { FormsModule } from '@angular/forms';
     UsersListComponent,
     UserSearchComponent,
     SidebarComponent,
-    UserCardComponent
+    UserCardComponent,
+    AddUserComponent
   ],
-  imports: [BrowserModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
