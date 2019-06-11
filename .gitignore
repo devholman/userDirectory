@@ -10,7 +10,11 @@
 # dependencies
 /node_modules
 #CUSTOM
+<<<<<<< HEAD
 ./src/environments/environments
+=======
+./environments/environments
+>>>>>>> 1e8b1636903c9522c7cd8ddf81f920c96081fa75
 # profiling files
 chrome-profiler-events.json
 speed-measure-plugin.json
