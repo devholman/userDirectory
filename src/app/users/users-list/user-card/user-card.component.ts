@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
 import { User } from '../user.model';
+import { phone } from '../../../../assets/svg-icons/card-svg.js';
 
 @Component({
   selector: 'app-user-card',

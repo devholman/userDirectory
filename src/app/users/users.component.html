@@ -4,7 +4,7 @@
     <p *ngIf="loadedUsers.length < 1 && !isFetchingUser">
       No Users Available!
     </p>
-    <div *ngIf="loadedUsers.length >= 1 && !isFetchingUser">
+    <div class="scroll" *ngIf="loadedUsers.length >= 1 && !isFetchingUser">
       <app-users-list [filteredUsers]="filteredUsers"></app-users-list>
     </div>
     <p *ngIf="isFetchingUser">Loading...</p>
